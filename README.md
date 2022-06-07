@@ -4,6 +4,6 @@
 
 ### Run this file to Install ffmpeg
 - Run the following commands:
-    <pre>`cd $GOPATH
+    <pre>
      node mse_json_install.js
-    `</pre>
+    </pre>
