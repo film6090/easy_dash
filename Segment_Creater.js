@@ -11,6 +11,7 @@ class Segment_Creater{
 		
 		this.counter = 0
 		this.keep_sizes = []
+		ffmpeg.setFfmpegPath(__dirname+"\\ffmpeg.exe ")
     }
 	
     extract_video(size){
