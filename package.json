@@ -1,0 +1,26 @@
+{
+  "name": "easy_dash",
+  "version": "0.0.1",
+  "description": "",
+  "main": "Segment_Creater.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndaChain/easy_dash.git"
+  },
+  "keywords": [
+    "dash",
+    "streaming"
+  ],
+  "author": "StarStrike",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndaChain/easy_dash/issues"
+  },
+  "homepage": "https://github.com/AndaChain/easy_dash#readme",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2"
+  }
+}
