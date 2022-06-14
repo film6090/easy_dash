@@ -1,4 +1,4 @@
-# Test_EZ_Dash
+# Easy_Dash
 ### Install this thing
 * [Go](http://golang.org/)
 
