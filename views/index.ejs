@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HTTP Video</title>
+   <title>Easy Dash</title>
 </head>
 <body>
-	<h1>List of available videos:</h1>
-	<ul>
-		<% locals.video_list.map((video_id) => { %>
-			<li><a href="/home/<%- video_id %>"><%- video_id %></a></li>
-		<% }) %>
-	</ul>
+   <video id="videoPlayer" width="600" height="400" controls data-player-id="<%- locals.video_id %>"></video>
+   <script type="text/javascript" src="/streaming-bundle.js" id_video="videoPlayer"></script>
 </body>
 </html>

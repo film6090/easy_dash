@@ -46,6 +46,7 @@ function segment_creater(source, savevideo, fileoutname){
 
 module.exports.sendFile = sendFile;
 module.exports.baseStream = baseStream;
+module.exports.segment_creater = segment_creater;
 /*
 source = "D:\\Documents\\Code\\Streaming_2\\master"
 savevideo = "D:\\Documents\\Code\\Streaming_2\\master\\VDO_Streaming_master\\video\\drive"

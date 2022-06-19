@@ -1,6 +1,6 @@
 {
   "name": "easy_dash",
-  "version": "0.0.8b",
+  "version": "0.0.8d",
   "description": "Easy Dash Streaming",
   "main": "Streaming/Streamingfunc.js",
   "scripts": {
