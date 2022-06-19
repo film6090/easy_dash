@@ -12,6 +12,15 @@ class Segment_Creater{
 		
 		this.counter = 0
 		this.keep_sizes = []
+		try {
+		  if (!fs.existsSync(savevideo)) {
+			fs.mkdirSync(savevideo);
+		  }
+		} 
+		catch (err) {
+		  console.error(err);
+		}
+		
 		ffmpeg.setFfmpegPath(__dirname+"\\ffmpeg.exe ")
     }
 	
@@ -43,7 +52,7 @@ class Segment_Creater{
 			  if(counter == 0){
 				new mpdgen(save_path, manifest_path, sizes)
 			  }
-			  console.log('End...');
+			  
         }) 
         .size(size)
         .noAudio()
@@ -76,8 +85,8 @@ class Segment_Creater{
 			  counter -= 1
 			  if(counter == 0){
 				new mpdgen(save_path, manifest_path, sizes)
+				console.log('End...');
 			  }
-              console.log('End...');
         })
         .noVideo()
         .save(save_path+'_audio.webm');

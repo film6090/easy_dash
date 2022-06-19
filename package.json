@@ -1,6 +1,6 @@
 {
   "name": "easy_dash",
-  "version": "0.0.8",
+  "version": "0.0.8b",
   "description": "Easy Dash Streaming",
   "main": "Streaming/Streamingfunc.js",
   "scripts": {
@@ -19,9 +19,9 @@
   "author": "StarStrike",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AndaChain/easy_dash/issues"
+    "url": "https://github.com/film6090/easy_dash/issues"
   },
-  "homepage": "https://github.com/AndaChain/easy_dash#readme",
+  "homepage": "https://github.com/film6090/easy_dash#readme",
   "dependencies": {
     "browserify": "^17.0.0",
     "dotenv": "^16.0.1",
