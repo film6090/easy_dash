@@ -1,8 +1,8 @@
 {
   "name": "easy_dash",
-  "version": "0.0.4",
+  "version": "0.0.8",
   "description": "Easy Dash Streaming",
-  "main": "Segment_Creater.js",
+  "main": "Streaming/Streamingfunc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run build-player && node index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndaChain/easy_dash.git"
+    "url": "git+https://github.com/film6090/easy_dash.git"
   },
   "keywords": [
     "dash",
@@ -27,7 +27,6 @@
     "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
-    "fluent-ffmpeg": "^2.1.2",
-    "iplocation": "^7.2.0"
+    "fluent-ffmpeg": "^2.1.2"
   }
 }

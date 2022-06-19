@@ -4,6 +4,11 @@ const fs = require("fs");
 class mpdgen{
     constructor(path, manifest_path , sizes){
 		var first_command = __dirname+"\\ffmpeg.exe "
+		console.log("**************************************************************")
+		console.log(sizes)
+		console.log(sizes.sort())
+		console.log(sizes)
+		console.log("**************************************************************")
 		for(var i=0; i<sizes.length; i+=1){
 			first_command += '-f webm_dash_manifest -i '+path+'_'+sizes[i]+'_output.webm '
 				

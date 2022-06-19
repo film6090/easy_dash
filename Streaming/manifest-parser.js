@@ -1,7 +1,9 @@
+const path = require("path");
+
 class ManifestParser {
 	constructor(video_id) {
 		this.video_id = video_id;
-		this.base_video_url = "/watch";
+		//this.base_video_url = base_video_url;
 	}
 
 	adaptationSetToJSON(adaptationSet) {
@@ -19,10 +21,13 @@ class ManifestParser {
 		for (let i = 0; i < representations.length; i++) {
 			let representationObj = {};
 			adaptSetObj.representations[i] = representationObj;
-			representationObj["url"] = `${this.base_video_url}/${this.video_id}/${this.getUrl(representations[i])}`;
+			representationObj["url"] = path.join(  this.video_id, this.getUrl(representations[i])  )
+			//representationObj["url"] = `${this.base_video_url}/${this.video_id}/${this.getUrl(representations[i])}`;
 
 			let timestampPromise = new Promise((res, rej) => {
-				fetch(`${this.base_video_url}/${this.video_id}/timestamps/${this.getUrl(representations[i])}.json`)
+				
+				//fetch(`${this.base_video_url}/${this.video_id}/${this.getUrl(representations[i])}.json`)
+				fetch(   path.join(this.video_id, this.getUrl(representations[i])+".json")   )
 				.then((response) => response.json())
 				.then((timestamp_info) => {
 					representationObj["timestamp_info"] = timestamp_info;
@@ -41,17 +46,19 @@ class ManifestParser {
 		let { children } = representation;
 		for (let i = 0; children.length; i++) {
 			if (children[i].tagName == "BaseURL") {
-				return children[i].textContent.split("\\\\")[1];
+				return children[i].textContent.split("\\").pop();
 			}
 		}
 	}
 
 	getJSONManifest() {
 		return new Promise((resolve, reject) => {
-			fetch(`${this.base_video_url}/${this.video_id}/manifest.mpd`)
+			//fetch(`${this.base_video_url}/${this.video_id}/manifest.mpd`)
+			fetch(  path.join(this.video_id, "manifest.mpd")  )
 			.then((response) => response.text())
 			.then((manifest_str) => (new window.DOMParser()).parseFromString(manifest_str, "text/xml"))
 			.then((manifest) => {
+				//console.log(manifest)
 				let first_period = manifest.getElementsByTagName("Period")[0];
 				let adaptationSets = first_period.children;
 
