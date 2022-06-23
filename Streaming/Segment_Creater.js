@@ -15,7 +15,7 @@ class Segment_Creater{
 		this.keep_sizes = []
 		try {
 		  if (!fs.existsSync(savevideo)) {
-			fs.mkdirSync(savevideo);
+			fs.mkdirSync(savevideo); // if it doesn't have any folder yet, it will create new folder.
 		  }
 		} 
 		catch (err) {
@@ -39,7 +39,7 @@ class Segment_Creater{
 		
 		var _command = ffmpeg(path+".mp4");
 		
-		_command.videoCodec('libvpx') //libvpx-vp9 could be used too
+		_command.videoCodec('libvpx') //libvpx could be used too
         .videoBitrate(3000, true) //Outputting a constrained 3Mbit VP8 video stream
         .outputOptions(
                 '-flags', '+global_header', //WebM won't love if you if you don't give it some headers
@@ -48,10 +48,10 @@ class Segment_Creater{
               console.log('Start...');
         })
         .on('end', function(err, stdout, stderr) {
-			  new jsongen(save_path+'_'+size+'_output.webm', json_path+'_'+size+'_output.webm')
+			  new jsongen(save_path+'_'+size+'_output.webm', json_path+'_'+size+'_output.webm') // create json files for all resolution of videos. (a json file for each a resolution of themself)
 			  counter -= 1
 			  if(counter == 0){
-				new mpdgen(save_path, manifest_path, sizes)
+				new mpdgen(save_path, manifest_path, sizes) // in the end it will create .mpd files for all resolution of videos.
 			  }
 			  
         }) 
@@ -82,10 +82,10 @@ class Segment_Creater{
               console.log('Start...');
         })
         .on('end', function(err, stdout, stderr) {
-			  new jsongen(save_path+'_audio.webm', json_path+'_audio.webm')
+			  new jsongen(save_path+'_audio.webm', json_path+'_audio.webm') // create json files for all resolution of videos. (a json file for each a resolution of themself)
 			  counter -= 1
 			  if(counter == 0){
-				new mpdgen(save_path, manifest_path, sizes)
+				new mpdgen(save_path, manifest_path, sizes) // in the end it will create .mpd files for all resolution of videos.
 				console.log('End...');
 			  }
         })
