@@ -9,7 +9,7 @@ class Streaming {
 		this.playerElement = playerElement
 		//this.base_video_url = base_video_url;
 		this.initialized = false;
-		this.buffer_move = true;
+		//this.buffer_move = true;
 		this.audioQueue = new Queue();
 		this.videoQueue = new Queue();
 		
@@ -209,6 +209,7 @@ class Streaming {
 			
 			this.videoMediaIndex++
 			
+			// when user skipping video to any position that does't render yet. it's will be cdhange media index.
 			this.playerElement.addEventListener("waiting", () => {
 					this.videoMediaIndex = Time-1
 					this.playerElement.pause()
@@ -268,6 +269,7 @@ class Streaming {
 		}
 	}
 	
+	// return current media index file for render vieo any position of timestemp
 	_inTime(){
 		var current_time = this.playerElement.currentTime
 		
