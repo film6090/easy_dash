@@ -5,9 +5,10 @@ const fs = require("fs");
 
 class Segment_Creater{
     constructor(source, savevideo, fileoutname){
-		this.pathToSourceFile = source+"\\"+fileoutname
-		this.pathToSaveFile = savevideo+"\\"+fileoutname
-		this.pathToJsonFile = savevideo+"\\"+fileoutname
+	    	var filename = fileoutname
+		this.pathToSourceFile = source+"\\"+filename
+		this.pathToSaveFile = savevideo+"\\"+filename
+		this.pathToJsonFile = savevideo+"\\"+filename
 		this.pathToManifestFile = savevideo+"\\"
 		
 		this.counter = 0
