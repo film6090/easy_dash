@@ -1,6 +1,9 @@
 const { exec } = require('node:child_process');
 const fs = require("fs");
 
+/* based on commandline to write file for create manifest.mpd of all resolution on each video. */
+/* by concatenate strings in form of commandline. */
+
 class mpdgen{
     constructor(path, manifest_path , sizes){
 		var first_command = __dirname+"\\ffmpeg.exe "
