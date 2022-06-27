@@ -1,3 +1,5 @@
+//main server used express.js framework.
+
 const express = require("express");
 const app = express();
 const PORT = 5000;
