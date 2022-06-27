@@ -1,3 +1,6 @@
+//calling when using command "browserify streaming/index.js -o public/streaming-bundle.js" to create bundle file.
+//this will change when build-player command is called in package.json
+
 const Player = require("./streaming");
 const Timer = require("./timer");
 const path = require("path");
