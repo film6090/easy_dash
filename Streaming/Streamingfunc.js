@@ -1,3 +1,5 @@
+//function used outside this folder/on main server.
+
 const fs = require("fs");
 const path = require("path");
 const segment = require("./Segment_Creater.js")
@@ -47,13 +49,3 @@ function segment_creater(source, savevideo, fileoutname){
 module.exports.sendFile = sendFile;
 module.exports.baseStream = baseStream;
 module.exports.segment_creater = segment_creater;
-/*
-source = "D:\\Documents\\Code\\Streaming_2\\master"
-savevideo = "D:\\Documents\\Code\\Streaming_2\\master\\VDO_Streaming_master\\video\\drive"
-fileoutname = "drive"
-var obj = segment_creater(source, savevideo, fileoutname);
-obj.extract_video('640x360')
-obj.extract_video('320x180')
-obj.extract_video('160x90')
-obj.extract_audio()
-*/
