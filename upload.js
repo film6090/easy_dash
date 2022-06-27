@@ -1,3 +1,5 @@
+//file converstion example.
+
 const { segment_creater } = require("easy_dash"); // call Prepairing Streaming video
 source = "D:/Documents/Code/Streaming_2/master/easy_dash/test-folder/source" // your directory that has origin video
 savevideo = "D:/Documents/Code/Streaming_2/master/easy_dash/test-folder/video/Polkka_rock" // your directory that want to save
