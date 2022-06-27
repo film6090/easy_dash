@@ -1,3 +1,5 @@
+//main streaming module
+
 const Queue = require("./queue");
 const ManifestParser = require("./manifest-parser");
 const { calculateByteRangeEnd, createByteRangeString, RetryTimer } = require("./util");
